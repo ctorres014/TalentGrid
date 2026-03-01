@@ -4,7 +4,7 @@ using TalentGrid.Domain.Aggregate;
 
 namespace TelentGrid.Persistence.Configurations
 {
-    internal class EndorsementEntityTypeConfiguration : IEntityTypeConfiguration<Endorsement>
+    internal class EndorsementConfiguration : IEntityTypeConfiguration<Endorsement>
     {
         public void Configure(EntityTypeBuilder<Endorsement> builder)
         {

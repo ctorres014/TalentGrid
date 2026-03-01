@@ -5,7 +5,7 @@ using TalentGrid.Domain.Aggregate;
 
 namespace TelentGrid.Persistence.Configurations
 {
-    public class EmployeeSkillEntityTypeConfiguration : IEntityTypeConfiguration<EmployeeSkills>
+    public class EmployeeSkillConfiguration : IEntityTypeConfiguration<EmployeeSkills>
     {
         public void Configure(EntityTypeBuilder<EmployeeSkills> builder)
         {

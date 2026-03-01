@@ -10,21 +10,9 @@ builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.ConfigureService();// Custom extension method to configure application services and persistence
+var app = builder
+    .ConfigureService()// Custom extension method to configure application services and persistence
+    .ConfigurePipeLine(); // Custom extension method to configure the HTTP request pipeline 
 
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
+app.InitializeDatabase();
 app.Run();
