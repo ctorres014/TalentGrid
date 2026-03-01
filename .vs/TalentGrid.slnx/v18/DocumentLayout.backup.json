@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\My Proyects\\TalentGrid\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|c:\\my proyects\\talentgrid\\talentgrid.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|solutionrelative:talentgrid.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|c:\\my proyects\\talentgrid\\talentgrid.api\\startupextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|solutionrelative:talentgrid.api\\startupextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15E8067B-2640-4FF3-B359-10C8114A29AF}|TelentGrid.Persistence\\TelentGrid.Persistence.csproj|c:\\my proyects\\talentgrid\\telentgrid.persistence\\configurationservicepersistence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15E8067B-2640-4FF3-B359-10C8114A29AF}|TelentGrid.Persistence\\TelentGrid.Persistence.csproj|solutionrelative:telentgrid.persistence\\configurationservicepersistence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0225CBE-B45B-4520-9EB7-D13B5167C13E}|TalentGrid.Application\\TalentGrid.Application.csproj|c:\\my proyects\\talentgrid\\talentgrid.application\\configurationserviceapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0225CBE-B45B-4520-9EB7-D13B5167C13E}|TalentGrid.Application\\TalentGrid.Application.csproj|solutionrelative:talentgrid.application\\configurationserviceapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0225CBE-B45B-4520-9EB7-D13B5167C13E}|TalentGrid.Application\\TalentGrid.Application.csproj|c:\\my proyects\\talentgrid\\talentgrid.application\\usecase\\searchtalent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0225CBE-B45B-4520-9EB7-D13B5167C13E}|TalentGrid.Application\\TalentGrid.Application.csproj|solutionrelative:talentgrid.application\\usecase\\searchtalent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15E8067B-2640-4FF3-B359-10C8114A29AF}|TelentGrid.Persistence\\TelentGrid.Persistence.csproj|c:\\my proyects\\talentgrid\\telentgrid.persistence\\repositories\\employeeskillsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15E8067B-2640-4FF3-B359-10C8114A29AF}|TelentGrid.Persistence\\TelentGrid.Persistence.csproj|solutionrelative:telentgrid.persistence\\repositories\\employeeskillsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB334F3-743C-452D-96C2-710E55A15D6E}|TalentGrid.Domain\\TalentGrid.Domain.csproj|c:\\my proyects\\talentgrid\\talentgrid.domain\\aggregate\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB334F3-743C-452D-96C2-710E55A15D6E}|TalentGrid.Domain\\TalentGrid.Domain.csproj|solutionrelative:talentgrid.domain\\aggregate\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCB334F3-743C-452D-96C2-710E55A15D6E}|TalentGrid.Domain\\TalentGrid.Domain.csproj|c:\\my proyects\\talentgrid\\talentgrid.domain\\aggregate\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCB334F3-743C-452D-96C2-710E55A15D6E}|TalentGrid.Domain\\TalentGrid.Domain.csproj|solutionrelative:talentgrid.domain\\aggregate\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20260301050709_initial migration.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs",
+              "RelativeDocumentMoniker": "TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs",
+              "RelativeToolTip": "TelentGrid.Persistence\\Migrations\\20260301050709_initial migration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T05:07:10.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConfigurationServiceApplication.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Application\\ConfigurationServiceApplication.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Application\\ConfigurationServiceApplication.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Application\\ConfigurationServiceApplication.cs",
+              "RelativeToolTip": "TalentGrid.Application\\ConfigurationServiceApplication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:56:52.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StartupExtension.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\StartupExtension.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Api\\StartupExtension.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\StartupExtension.cs",
+              "RelativeToolTip": "TalentGrid.Api\\StartupExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:51:52.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConfigurationServicePersistence.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\ConfigurationServicePersistence.cs",
+              "RelativeDocumentMoniker": "TelentGrid.Persistence\\ConfigurationServicePersistence.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\ConfigurationServicePersistence.cs",
+              "RelativeToolTip": "TelentGrid.Persistence\\ConfigurationServicePersistence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:47:09.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\Program.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Api\\Program.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\Program.cs",
+              "RelativeToolTip": "TalentGrid.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:41:12.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SearchTalent.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Application\\UseCase\\SearchTalent.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Application\\UseCase\\SearchTalent.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Application\\UseCase\\SearchTalent.cs",
+              "RelativeToolTip": "TalentGrid.Application\\UseCase\\SearchTalent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T04:22:42.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeSkillsRepository.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\Repositories\\EmployeeSkillsRepository.cs",
+              "RelativeDocumentMoniker": "TelentGrid.Persistence\\Repositories\\EmployeeSkillsRepository.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TelentGrid.Persistence\\Repositories\\EmployeeSkillsRepository.cs",
+              "RelativeToolTip": "TelentGrid.Persistence\\Repositories\\EmployeeSkillsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:50:44.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Domain\\Aggregate\\Employee.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Domain\\Aggregate\\Employee.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Domain\\Aggregate\\Employee.cs",
+              "RelativeToolTip": "TalentGrid.Domain\\Aggregate\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T03:25:22.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Skill.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Domain\\Aggregate\\Skill.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Domain\\Aggregate\\Skill.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Domain\\Aggregate\\Skill.cs",
+              "RelativeToolTip": "TalentGrid.Domain\\Aggregate\\Skill.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T11:13:54.899Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

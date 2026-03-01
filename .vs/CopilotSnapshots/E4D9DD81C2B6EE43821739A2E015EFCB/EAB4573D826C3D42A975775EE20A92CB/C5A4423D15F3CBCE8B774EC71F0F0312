@@ -1,0 +1,30 @@
+﻿using Microsoft.EntityFrameworkCore;
+using TalentGrid.Domain.Aggregate;
+using TalentGrid.Domain.Contracts;
+using TelentGrid.Persistence.Context;
+
+namespace TelentGrid.Persistence.Repositories
+{
+    public class EmployeeSkillsRepository : IEmployeeSkillsRepository
+    {
+        private readonly TalentGridDbContext _context;
+
+        public EmployeeSkillsRepository(TalentGridDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<List<EmployeeSkills>> GetEmployeeSkills(string skillName, int minLevel = 1)
+        {
+            return await _context.EmployeesSkills
+                        .Where(es => es.Skill.Name.Contains(skillName) && es.ProficiencyLevel >= minLevel)
+                        .Select(es => new 
+                        {
+                            es.Employee.FullName,
+                            es.Employee.Role,
+                            es.Skill.Name,
+                            es.ProficiencyLevel,
+                            es.Endorsements.Count
+                        }).ToListAsync();
+        }
+    }
+}
