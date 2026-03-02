@@ -1,0 +1,35 @@
+TalentGrid: Gestión Dinámica de Talento Interno
+==================================================
+
+En empresas de más de 50 personas, los directivos suelen perder la noción de qué habilidades reales tienen sus empleados (más allá de su título de puesto).
+
+La Necesidad: Una plataforma donde las habilidades se actualizan dinámicamente mediante micro-validaciones entre compañeros, permitiendo encontrar expertos internos para proyectos específicos.
+
+Por qué .NET Core: Excelente para manejar estructuras de datos complejas y relaciones (usando Entity Framework Core) y muy fácil de integrar con Azure AD (Entra ID) que es lo que usan casi todas las empresas.
+
+MVP: Un buscador de habilidades tipo "Páginas Amarillas" internas donde los empleados listan su stack y otros pueden dar un "+1".
+
+Escalabilidad: Un motor de recomendaciones que sugiera capacitaciones basadas en las brechas de habilidades detectadas en la organización.
+
+
+Las empresas hoy sufren de "Silos de Conocimiento". Un desarrollador senior puede estar frustrado haciendo mantenimiento porque nadie sabe que es un experto en Rust o que tiene un certificado en Seguridad que la empresa está buscando contratar afuera.
+
+Pérdida Económica: Contratar externamente cuesta entre 1.5 y 2 veces el salario anual de la posición. Si el talento ya está "en casa", la empresa ahorra miles de dólares.
+
+Desmotivación: El "Quiet Quitting" ocurre cuando los empleados sienten que sus habilidades no se aprovechan.
+
+Obsolescencia: RR.HH. no sabe qué cursos de capacitación comprar porque no tiene un mapa real de qué habilidades faltan (Skill Gap).
+
+
+Proyección de Crecimiento (Roadmap)
+===================================
+
+Para que esto sea un SaaS exitoso, debe evolucionar de un simple directorio a un motor de inteligencia organizacional:
+
+Etapa 1: El Directorio Vivo (MVP): Los empleados crean su perfil, listan habilidades y los compañeros "validan" esas habilidades (estilo LinkedIn, pero interno y verificado).
+
+Etapa 2: Integración de Ecosistema: Sincronización automática con GitHub (para ver lenguajes reales), Jira (para ver en qué tareas destacan) o LinkedIn.
+
+Etapa 3: "Gig Marketplace" Interno: Un módulo donde un líder de proyecto publica una necesidad corta (ej: "Necesito alguien que sepa editar video para un evento de 2 días") y el sistema recomienda automáticamente a empleados internos.
+
+Etapa 4: IA y Análisis Predictivo: Usar ML para predecir qué habilidades serán críticas para la empresa en el próximo año basándose en la rotación y tendencias del mercado.
