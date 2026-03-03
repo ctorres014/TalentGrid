@@ -33,3 +33,36 @@ Etapa 2: Integración de Ecosistema: Sincronización automática con GitHub (par
 Etapa 3: "Gig Marketplace" Interno: Un módulo donde un líder de proyecto publica una necesidad corta (ej: "Necesito alguien que sepa editar video para un evento de 2 días") y el sistema recomienda automáticamente a empleados internos.
 
 Etapa 4: IA y Análisis Predictivo: Usar ML para predecir qué habilidades serán críticas para la empresa en el próximo año basándose en la rotación y tendencias del mercado.
+
+Steps
+======
+
+A. POST /api/me/skills (Auto-gestión)
+Permite que el empleado logueado defina su perfil técnico.
+
+Lógica: Si la habilidad ya existe en su perfil, actualiza el nivel; si no, la crea.
+
+Impacto: Es la fuente de datos primaria del sistema.
+
+B. POST /api/endorsements (Validación Social)
+Permite que un compañero valide la habilidad de otro.
+
+Lógica: Recibe el ID del compañero, el ID de la habilidad y un comentario.
+
+Regla de Negocio: Un empleado no puede validarse a sí mismo (fácil de validar en C#).
+
+C. GET /api/talents/search?skillName=...&minLevel=3 (El Motor de Búsqueda)
+El endpoint estrella para los managers.
+
+Lógica: Realiza un Join entre Employee, EmployeeSkill y Skill.
+
+
+
+Autenticación: Usa Microsoft Entra ID (Azure AD). Es el estándar en empresas y te facilitará la venta del SaaS porque permite "Single Sign-On".
+
+C. Primeros Pasos Prácticos
+Definir la Taxonomía: No dejes que la gente escriba "C-Sharp", "C#" y "CSharp" por separado. Necesitas un catálogo base de habilidades.
+
+Crear el API de Búsqueda: El valor real está en que un manager busque "Azure + Docker" y el API devuelva a los 3 mejores candidatos internos usando LINQ.
+
+El Sistema de Endorsement: Implementar la lógica para que las validaciones tengan peso (ej: si un Senior valida a un Junior, vale más puntos que si un Junior valida a un Senior).

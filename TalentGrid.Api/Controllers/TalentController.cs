@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TalentGrid.Application.Contracts.Dto;
 using TalentGrid.Application.Contracts.UseCase;
 
 namespace TalentGrid.Api.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("api/[controller]")]
     public class TalentController: ControllerBase
     {

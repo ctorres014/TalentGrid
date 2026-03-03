@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using System.Text;
 using TalentGrid.Application;
 using TelentGrid.Persistence;
 using TelentGrid.Persistence.Context;
@@ -13,6 +16,8 @@ namespace TalentGrid.Api
         {
             builder.Services.AddServiceApplication();
             builder.Services.AddServicePersistence(builder.Configuration.GetConnectionString("TalentGridDbContextConnection"));
+            
+            AddAuthentication(builder);
             return builder.Build();
         }
 
@@ -25,9 +30,9 @@ namespace TalentGrid.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            
             app.UseHttpsRedirection();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
@@ -51,6 +56,26 @@ namespace TalentGrid.Api
                     logger.LogError(ex, "Ocurrió un error al poblar la DB.");
                 }
             }
+        }
+
+        private static void AddAuthentication(this WebApplicationBuilder builder) 
+        {
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+             .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+
+            });
+        
         }
     }
 }

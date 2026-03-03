@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|c:\\my proyects\\talentgrid\\talentgrid.api\\controllers\\talentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|solutionrelative:talentgrid.api\\controllers\\talentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|c:\\my proyects\\talentgrid\\talentgrid.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|solutionrelative:talentgrid.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|c:\\my proyects\\talentgrid\\talentgrid.api\\startupextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{343854A4-7B0A-E814-688F-AFE498034112}|TalentGrid.Api\\TalentGrid.Api.csproj|solutionrelative:talentgrid.api\\startupextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "TalentGrid.Api\\appsettings.json",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\appsettings.json",
+              "RelativeToolTip": "TalentGrid.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-02T10:15:59.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StartupExtension.cs",
+              "DocumentMoniker": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\StartupExtension.cs",
+              "RelativeDocumentMoniker": "TalentGrid.Api\\StartupExtension.cs",
+              "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\StartupExtension.cs",
+              "RelativeToolTip": "TalentGrid.Api\\StartupExtension.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAEQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:02:58.976Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "TalentGrid.Api\\Controllers\\TalentController.cs",
               "ToolTip": "C:\\My Proyects\\TalentGrid\\TalentGrid.Api\\Controllers\\TalentController.cs",
               "RelativeToolTip": "TalentGrid.Api\\Controllers\\TalentController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-02T09:33:53.137Z",
               "EditorCaption": ""
