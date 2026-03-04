@@ -25,5 +25,7 @@ namespace TalentGrid.Api.Controllers
                 return NotFound("No talents found matching the criteria.");
             return Ok(result);
         }
+
+        // Implement endpoint for create new skill for username
     }
 }
