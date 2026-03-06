@@ -1,7 +1,4 @@
-﻿using TalentGrid.Application.Contracts.Dto;
-using TalentGrid.Domain.Aggregate;
-
-namespace TalentGrid.Application.Contracts
+﻿namespace TalentGrid.Domain.Contracts
 {
     public interface IEmployeeSkillsRepository
     {

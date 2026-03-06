@@ -17,38 +17,38 @@ builder.Services.AddSwaggerGen(options =>
         Version = "v1"
     });
 
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        Type = SecuritySchemeType.OAuth2,
-        Flows = new OpenApiOAuthFlows
-        {
-            AuthorizationCode = new OpenApiOAuthFlow
-            {
-                AuthorizationUrl = new Uri("https://localhost:8080/realms/TalentGrid/protocol/openid-connect/auth"),
-                TokenUrl = new Uri("https://localhost:8080/realms/TalentGrid/protocol/openid-connect/token"),
-                Scopes = new Dictionary<string, string>
-                    {
-                        { "openid", "OpenID" },
-                        { "profile", "Profile" }
-                    }
-            }
-        }
-    });
+    //options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    //{
+    //    Type = SecuritySchemeType.OAuth2,
+    //    Flows = new OpenApiOAuthFlows
+    //    {
+    //        AuthorizationCode = new OpenApiOAuthFlow
+    //        {
+    //            AuthorizationUrl = new Uri("https://localhost:8080/realms/TalentGrid/protocol/openid-connect/auth"),
+    //            TokenUrl = new Uri("https://localhost:8080/realms/TalentGrid/protocol/openid-connect/token"),
+    //            Scopes = new Dictionary<string, string>
+    //                {
+    //                    { "openid", "OpenID" },
+    //                    { "profile", "Profile" }
+    //                }
+    //        }
+    //    }
+    //});
 
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "oauth2"
-                }
-            },
-            new[] { "openid", "profile" }
-        }
-    });
+    //options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    //{
+    //    {
+    //        new OpenApiSecurityScheme
+    //        {
+    //            Reference = new OpenApiReference
+    //            {
+    //                Type = ReferenceType.SecurityScheme,
+    //                Id = "oauth2"
+    //            }
+    //        },
+    //        new[] { "openid", "profile" }
+    //    }
+    //});
 
 });
 

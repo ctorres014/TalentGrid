@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TalentGrid.Domain\TalentGrid.Domain.csproj" />
+    <ProjectReference Include="..\TelentGrid.Persistence\TelentGrid.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Feature\Skills\Command\" />
   </ItemGroup>
 
 </Project>
