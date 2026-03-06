@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Feature\Skills\Command\" />
+    <None Include="Abstraction\ICommandHandler.cs" />
   </ItemGroup>
 
 </Project>

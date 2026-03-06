@@ -1,7 +1,9 @@
-﻿namespace TalentGrid.Domain.Contracts
+﻿using TalentGrid.Domain.Aggregate;
+
+namespace TalentGrid.Domain.Contracts
 {
     public interface IEmployeeSkillsRepository
     {
-        //Task<List<SearchTalentDto>> GetEmployeeSkills(string skillName, int minLevel=1);
+        Task<EmployeeSkills> AddEmployeeSkill(EmployeeSkills employeeSkills);
     }
 }

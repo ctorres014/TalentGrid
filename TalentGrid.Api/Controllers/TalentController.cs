@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
-using TalentGrid.Application.Contracts.UseCase;
+using TalentGrid.Application.Feature.Skills.Command;
 using TalentGrid.Application.Feature.Skills.Queries.GetSkillsByEmployee;
 
 namespace TalentGrid.Api.Controllers
@@ -10,17 +9,18 @@ namespace TalentGrid.Api.Controllers
     [ApiController]
     //[Authorize]
     [Route("api/[controller]")]
-    public class TalentController: ControllerBase
+    public class TalentController : ControllerBase
     {
         private readonly IQueryDispatcher _dispatcher;
-
-        public TalentController(IQueryDispatcher dispatcher)
+        private readonly ICommandDispatcher _commandDispatcher;
+        public TalentController(IQueryDispatcher dispatcher, ICommandDispatcher commandDispatcher)
         {
             _dispatcher = dispatcher;
+            _commandDispatcher = commandDispatcher;
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> Search([FromQuery] string skillName, [FromQuery] int minLevel= 1) 
+        public async Task<IActionResult> Search([FromQuery] string skillName, [FromQuery] int minLevel = 1)
         {
             var query = new GetSkillsByEmployeeQuery { SkillName = skillName, MinLevel = minLevel };
             var result = await _dispatcher.Dispatch<GetSkillsByEmployeeQuery, List<SearchTalentDto>>(query);
@@ -29,6 +29,11 @@ namespace TalentGrid.Api.Controllers
             return Ok(result);
         }
 
-        // Implement endpoint for create new skill for username
+        [HttpPost("add-skill")]
+        public async Task<IActionResult> AddSkillToEmployee([FromBody] AddEmployeeSkillsCommand command)
+        {
+            await _commandDispatcher.Dispatch(command);
+            return Ok("Skill added successfully.");
+        }
     }
 }
