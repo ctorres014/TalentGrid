@@ -1,4 +1,4 @@
-﻿namespace TalentGrid.Application
+﻿namespace TalentGrid.Application.Abstraction
 {
     public interface IQueryHandler<TQuery, TResult>
     {

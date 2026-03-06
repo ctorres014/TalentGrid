@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
 using TelentGrid.Persistence.Context;
 

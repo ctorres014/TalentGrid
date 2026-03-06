@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TalentGrid.Application;
+using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
 using TalentGrid.Application.Contracts.UseCase;
 using TalentGrid.Application.Feature.Skills.Queries.GetSkillsByEmployee;
@@ -12,18 +12,18 @@ namespace TalentGrid.Api.Controllers
     [Route("api/[controller]")]
     public class TalentController: ControllerBase
     {
-        private readonly IQueryHandler<GetSkillsByEmployeeQuery, List<SearchTalentDto>> _handler;
+        private readonly IQueryDispatcher _dispatcher;
 
-        public TalentController(IQueryHandler<GetSkillsByEmployeeQuery, List<SearchTalentDto>> handler)
+        public TalentController(IQueryDispatcher dispatcher)
         {
-            _handler = handler;
+            _dispatcher = dispatcher;
         }
 
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] string skillName, [FromQuery] int minLevel= 1) 
         {
             var query = new GetSkillsByEmployeeQuery { SkillName = skillName, MinLevel = minLevel };
-            var result = await _handler.Handle(query);
+            var result = await _dispatcher.Dispatch<GetSkillsByEmployeeQuery, List<SearchTalentDto>>(query);
             if (result == null || !result.Any())
                 return NotFound("No talents found matching the criteria.");
             return Ok(result);

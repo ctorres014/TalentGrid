@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using TelentGrid.Persistence.Context;
-using TelentGrid.Persistence.Repositories;
 
 namespace TelentGrid.Persistence
 {
