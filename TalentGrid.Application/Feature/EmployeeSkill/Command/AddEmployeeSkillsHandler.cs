@@ -3,7 +3,7 @@ using TalentGrid.Domain.Aggregate;
 using TalentGrid.Domain.Contracts;
 using TalentGrid.Domain.Repositories;
 
-namespace TalentGrid.Application.Feature.Skills.Command
+namespace TalentGrid.Application.Feature.EmployeeSkill.Command
 {
     public class AddEmployeeSkillsHandler : ICommandHandler<AddEmployeeSkillsCommand>
     {

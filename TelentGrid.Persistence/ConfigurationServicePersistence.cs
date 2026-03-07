@@ -18,7 +18,7 @@ namespace TelentGrid.Persistence
             // Registrar repositorios
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IEmployeeSkillsRepository, EmployeeSkillsRepository>();
-
+            services.AddScoped<IEndorsmentRepository, EndorsmentRepository>();
             return services;
         }
     }

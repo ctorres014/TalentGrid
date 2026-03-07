@@ -19,4 +19,9 @@
     <None Include="Abstraction\ICommandHandler.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Feature\Endorsment\Queries\" />
+    <Folder Include="Feature\Skills\" />
+  </ItemGroup>
+
 </Project>

@@ -60,13 +60,8 @@ namespace TelentGrid.Persistence.DbInit
 
             // 6. Agregar algunos Endorsements (Validaciones)
             // Berto valida a Ana en .NET
-            context.Endorsements.Add(new Endorsement
-            {
-                GiverEmployeeId = employees[1].Id,
-                EmployeeSkill_EmployeeId = employees[0].Id,
-                EmployeeSkill_SkillId = skills[0].Id,
-                Comment = "Ana es la mejor arquitecta .NET que conozco."
-            });
+            var endorsment = Endorsement.Create(employees[1].Id, employees[0].Id, skills[0].Id, "Ana es la mejor arquitecta .NET que conozco.");
+            context.Endorsements.Add(endorsment);
 
             context.SaveChanges();
         }

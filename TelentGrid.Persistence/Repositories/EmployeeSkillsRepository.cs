@@ -1,4 +1,5 @@
-﻿using TalentGrid.Domain.Aggregate;
+﻿using Microsoft.EntityFrameworkCore;
+using TalentGrid.Domain.Aggregate;
 using TalentGrid.Domain.Contracts;
 using TelentGrid.Persistence.Context;
 
@@ -16,5 +17,9 @@ namespace TelentGrid.Persistence.Repositories
 
         public async Task<EmployeeSkills> AddEmployeeSkill(EmployeeSkills employeeSkills)
             => await AddAsync(employeeSkills);
+
+        public async Task<EmployeeSkills> EmployeeHasSkill(int employeeId, int skillId)
+            => await _context.EmployeesSkills.FirstOrDefaultAsync(es => es.EmployeeId == employeeId
+                                                                    && es.SkillId == skillId);
     }
 }

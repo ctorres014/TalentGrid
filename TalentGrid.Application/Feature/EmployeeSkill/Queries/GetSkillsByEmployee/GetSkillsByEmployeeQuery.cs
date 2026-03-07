@@ -1,4 +1,4 @@
-﻿namespace TalentGrid.Application.Feature.Skills.Queries.GetSkillsByEmployee
+﻿namespace TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee
 {
     public class GetSkillsByEmployeeQuery
     {

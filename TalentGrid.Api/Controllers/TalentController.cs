@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
-using TalentGrid.Application.Feature.Skills.Command;
-using TalentGrid.Application.Feature.Skills.Queries.GetSkillsByEmployee;
+using TalentGrid.Application.Feature.EmployeeSkill.Command;
+using TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee;
 
 namespace TalentGrid.Api.Controllers
 {

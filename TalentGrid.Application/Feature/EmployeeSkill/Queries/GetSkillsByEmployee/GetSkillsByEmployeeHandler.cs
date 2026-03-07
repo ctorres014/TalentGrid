@@ -3,7 +3,7 @@ using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
 using TelentGrid.Persistence.Context;
 
-namespace TalentGrid.Application.Feature.Skills.Queries.GetSkillsByEmployee
+namespace TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee
 {
     public class GetSkillsByEmployeeHandler : IQueryHandler<GetSkillsByEmployeeQuery, List<SearchTalentDto>>
     {
