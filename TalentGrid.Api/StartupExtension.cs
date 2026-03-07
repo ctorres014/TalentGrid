@@ -16,8 +16,24 @@ namespace TalentGrid.Api
         {
             builder.Services.AddServiceApplication();
             builder.Services.AddServicePersistence(builder.Configuration.GetConnectionString("TalentGridDbContextConnection"));
-            
-            AddAuthentication(builder);
+
+            //AddAuthentication(builder);
+            builder.Services.AddAuthentication()
+                .AddKeycloakJwtBearer(
+                    serviceName: "keycloak",
+                    realm: "TalentGrid",
+                    configureOptions: options =>
+                    {
+                        options.Audience = builder.Configuration["Keycloak:Audience"]; // Client ID configurado en Keycloak
+                        //options.Authority = builder.Configuration["Keycloak:Authority"];
+                        if(builder.Environment.IsDevelopment())
+                        {
+                            options.RequireHttpsMetadata = false; // Solo para desarrollo
+                        }
+                    }
+                );
+            builder.Services.AddAuthorizationBuilder();
+
             return builder.Build();
         }
 
@@ -26,9 +42,13 @@ namespace TalentGrid.Api
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
+                //app.MapOpenApi();
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(options =>
+                {
+                    options.OAuthClientId("TalentGrid");
+                    options.OAuthUsePkce();
+                });
             }
             
             app.UseHttpsRedirection();

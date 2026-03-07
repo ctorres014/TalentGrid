@@ -1,0 +1,11 @@
+﻿namespace TalentGrid.Domain.Repositories
+{
+    public interface IAsyncRepository<T> where T: class
+    {
+        Task<ICollection<T>> GetAllAsync();
+        Task<T> GetByIdAsync(Guid id);
+        Task<T> AddAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
+    }
+}

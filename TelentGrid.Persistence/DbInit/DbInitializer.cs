@@ -43,28 +43,25 @@ namespace TelentGrid.Persistence.DbInit
             var empSkills = new List<EmployeeSkills>
             {
                 // Ana sabe .NET (Nivel 5) y Docker (Nivel 4)
-                new() { EmployeeId = employees[0].Id, SkillId = skills[0].Id, ProficiencyLevel = 5 },
-                new() { EmployeeId = employees[0].Id, SkillId = skills[3].Id, ProficiencyLevel = 4 },
-                
+                EmployeeSkills.Create(employees[0].Id, skills[0].Id, 5),
+                //new() { EmployeeId = employees[0].Id, SkillId = skills[3].Id, ProficiencyLevel = 4 },
+                EmployeeSkills.Create(employees[0].Id, skills[0].Id, 4),
                 // Berto es experto en Azure y Docker
-                new() { EmployeeId = employees[1].Id, SkillId = skills[4].Id, ProficiencyLevel = 5 },
-                new() { EmployeeId = employees[1].Id, SkillId = skills[3].Id, ProficiencyLevel = 5 },
-
+                //new() { EmployeeId = employees[1].Id, SkillId = skills[4].Id, ProficiencyLevel = 5 },
+                EmployeeSkills.Create(employees[1].Id, skills[4].Id, 5),
+                //new() { EmployeeId = employees[1].Id, SkillId = skills[3].Id, ProficiencyLevel = 5 },
+                EmployeeSkills.Create(employees[1].Id, skills[3].Id, 5),
                 // Carla es experta en React
-                new() { EmployeeId = employees[2].Id, SkillId = skills[1].Id, ProficiencyLevel = 5 }
+                //new() { EmployeeId = employees[2].Id, SkillId = skills[1].Id, ProficiencyLevel = 5 }
+                EmployeeSkills.Create(employees[2].Id, skills[1].Id, 5),
             };
             context.EmployeesSkills.AddRange(empSkills);
             context.SaveChanges();
 
             // 6. Agregar algunos Endorsements (Validaciones)
             // Berto valida a Ana en .NET
-            context.Endorsements.Add(new Endorsement
-            {
-                GiverEmployeeId = employees[1].Id,
-                EmployeeSkill_EmployeeId = employees[0].Id,
-                EmployeeSkill_SkillId = skills[0].Id,
-                Comment = "Ana es la mejor arquitecta .NET que conozco."
-            });
+            var endorsment = Endorsement.Create(employees[1].Id, employees[0].Id, skills[0].Id, "Ana es la mejor arquitecta .NET que conozco.");
+            context.Endorsements.Add(endorsment);
 
             context.SaveChanges();
         }

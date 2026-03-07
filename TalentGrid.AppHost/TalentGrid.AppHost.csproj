@@ -1,0 +1,18 @@
+﻿<Project Sdk="Aspire.AppHost.Sdk/13.1.0">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>5a9f0eec-5a5b-4b2b-bd3b-8d01129b5f59</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.Keycloak" Version="13.1.2-preview.1.26125.13" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="13.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TalentGrid.Api\TalentGrid.Api.csproj" />
+  </ItemGroup>
+
+</Project>

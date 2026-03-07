@@ -6,6 +6,9 @@
     <Project Path="TalentGrid.Application/TalentGrid.Application.csproj" Id="f0225cbe-b45b-4520-9eb7-d13b5167c13e" />
     <Project Path="TalentGrid.Domain/TalentGrid.Domain.csproj" Id="ccb334f3-743c-452d-96c2-710e55a15d6e" />
   </Folder>
+  <Folder Name="/Host/">
+    <Project Path="TalentGrid.AppHost/TalentGrid.AppHost.csproj" Id="8fe4d204-bb81-4986-8d6c-5f435b587d01" />
+  </Folder>
   <Folder Name="/Infrastructure/">
     <Project Path="TelentGrid.Persistence/TelentGrid.Persistence.csproj" Id="15e8067b-2640-4ff3-b359-10c8114a29af" />
   </Folder>

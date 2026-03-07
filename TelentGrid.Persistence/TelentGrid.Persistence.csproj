@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TalentGrid.Application\TalentGrid.Application.csproj" />
     <ProjectReference Include="..\TalentGrid.Domain\TalentGrid.Domain.csproj" />
   </ItemGroup>
 

@@ -1,29 +1,39 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
-using TalentGrid.Application.Contracts.UseCase;
+using TalentGrid.Application.Feature.EmployeeSkill.Command;
+using TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee;
 
 namespace TalentGrid.Api.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
-    public class TalentController: ControllerBase
+    public class TalentController : ControllerBase
     {
-        private readonly ISearchTalent _searchTalen;
-
-        public TalentController(ISearchTalent searchTalent)
+        private readonly IQueryDispatcher _dispatcher;
+        private readonly ICommandDispatcher _commandDispatcher;
+        public TalentController(IQueryDispatcher dispatcher, ICommandDispatcher commandDispatcher)
         {
-            _searchTalen = searchTalent;
+            _dispatcher = dispatcher;
+            _commandDispatcher = commandDispatcher;
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> Search([FromQuery] string skillName, [FromQuery] int minLevel= 1) 
+        public async Task<IActionResult> Search([FromQuery] string skillName, [FromQuery] int minLevel = 1)
         {
-            var result = await _searchTalen.SearchTalents(skillName, minLevel);
+            var query = new GetSkillsByEmployeeQuery { SkillName = skillName, MinLevel = minLevel };
+            var result = await _dispatcher.Dispatch<GetSkillsByEmployeeQuery, List<SearchTalentDto>>(query);
             if (result == null || !result.Any())
                 return NotFound("No talents found matching the criteria.");
             return Ok(result);
+        }
+
+        [HttpPost("add-skill")]
+        public async Task<IActionResult> AddSkillToEmployee([FromBody] AddEmployeeSkillsCommand command)
+        {
+            await _commandDispatcher.Dispatch(command);
+            return Ok("Skill added successfully.");
         }
     }
 }
