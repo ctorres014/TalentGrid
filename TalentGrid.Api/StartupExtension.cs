@@ -34,6 +34,8 @@ namespace TalentGrid.Api
                 );
             builder.Services.AddAuthorizationBuilder();
 
+            builder.AddOllamaApiClient("llama");
+           
             return builder.Build();
         }
 

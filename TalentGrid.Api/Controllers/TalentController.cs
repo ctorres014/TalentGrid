@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
-using TalentGrid.Application.Feature.EmployeeSkill.Command;
+using TalentGrid.Application.Feature.EmployeeSkill.Command.AddEmployeeSkills;
 using TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee;
 
 namespace TalentGrid.Api.Controllers
@@ -35,5 +35,7 @@ namespace TalentGrid.Api.Controllers
             await _commandDispatcher.Dispatch(command);
             return Ok("Skill added successfully.");
         }
+
+
     }
 }

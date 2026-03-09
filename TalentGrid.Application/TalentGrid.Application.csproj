@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Feature\Endorsment\Queries\**" />
+    <Compile Remove="Feature\Skills\**" />
+    <EmbeddedResource Remove="Feature\Endorsment\Queries\**" />
+    <EmbeddedResource Remove="Feature\Skills\**" />
+    <None Remove="Feature\Endorsment\Queries\**" />
+    <None Remove="Feature\Skills\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Aspire.OllamaSharp" Version="13.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
   </ItemGroup>
 
@@ -20,8 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Feature\Endorsment\Queries\" />
-    <Folder Include="Feature\Skills\" />
+    <Folder Include="Feature\Mentor\Command\" />
   </ItemGroup>
 
 </Project>

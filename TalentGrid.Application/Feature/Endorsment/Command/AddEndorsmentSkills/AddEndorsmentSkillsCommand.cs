@@ -1,4 +1,4 @@
-﻿namespace TalentGrid.Application.Feature.Endorsment.Command
+﻿namespace TalentGrid.Application.Feature.Endorsment.Command.AddEndorsmentSkills
 {
     public class AddEndorsmentSkillsCommand
     {

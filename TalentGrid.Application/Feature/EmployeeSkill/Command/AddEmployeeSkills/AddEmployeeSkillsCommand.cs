@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace TalentGrid.Application.Feature.EmployeeSkill.Command
+namespace TalentGrid.Application.Feature.EmployeeSkill.Command.AddEmployeeSkills
 {
     public class AddEmployeeSkillsCommand
     {

@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting.Keycloak" Version="13.1.2-preview.1.26125.13" />
     <PackageReference Include="Aspire.Hosting.AppHost" Version="13.1.2" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Ollama" Version="13.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TalentGrid.Api\TalentGrid.Api.csproj" />

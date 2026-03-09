@@ -17,5 +17,11 @@ namespace TelentGrid.Persistence.Repositories
 
         public async Task<Employee> GetByEmailAsync(string email)
             => await _context.Employees.FirstOrDefaultAsync(e => e.Email == email);
+
+        public async Task<Employee> GetEmployeeInformation(int employeeId)
+            => await _context.Employees
+                .Include(e => e.EmployeeSkills)
+                .ThenInclude(es => es.Skill)
+                .FirstOrDefaultAsync(e => e.Id == employeeId);
     }
 }

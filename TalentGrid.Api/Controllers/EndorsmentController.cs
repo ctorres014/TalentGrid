@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TalentGrid.Application.Abstraction;
-using TalentGrid.Application.Feature.Endorsment.Command;
+using TalentGrid.Application.Feature.Endorsment.Command.AddEndorsmentSkills;
 
 namespace TalentGrid.Api.Controllers
 {
