@@ -1,4 +1,6 @@
 ﻿using OllamaSharp;
+using System.Text.Json;
+using TalentGrid.Application.Contracts.Dto;
 
 namespace TalentGrid.Application.Services.AI
 {
@@ -12,20 +14,26 @@ namespace TalentGrid.Application.Services.AI
             _ollamaClient.SelectedModel = "llama3.2:latest";
         }
 
-        public async Task<string> GetCareerAdviceAsync(string currentRole, List<string> skills, string targetRole)
+        public async Task<CareerPathDto> GetCareerAdviceAsync(string currentRole, List<string> skills, string targetRole)
         {
             var skillsList = string.Join(", ", skills);
 
-            // El "Prompt" es la clave para que la IA sea útil
+            // Prompt de Ingeniería de Datos
             var prompt = $@"
-            Actúa como un Mentor de Carrera Tech experto. 
-            El empleado es actualmente {currentRole} y tiene estas habilidades: {skillsList}.
-            Su objetivo es llegar a ser {targetRole}.
-            
-            Por favor, responde en español de forma concisa:
-            1. Identifica las 3 brechas (skills faltantes) más críticas.
-            2. Sugiere un proyecto práctico para cerrar esa brecha.
-            3. Da un consejo motivador corto.";
+                Eres un sistema de Inteligencia Organizacional. 
+                Analiza al empleado: Rol Actual '{currentRole}', Habilidades: [{skillsList}]. 
+                Objetivo: '{targetRole}'.
+
+                Responde ÚNICAMENTE en formato JSON siguiendo esta estructura exacta:
+                {{
+                  ""summary"": ""Breve análisis de la situación"",
+                  ""missingSkills"": [
+                    {{ ""skillName"": ""Nombre"", ""importance"": ""Alta/Media"", ""why"": ""Razón"" }}
+                  ],
+                  ""recommendedProject"": {{ ""title"": ""Nombre del proyecto"", ""description"": ""Detalle"" }},
+                  ""motivationQuote"": ""Frase corta""
+                }}
+                No incluyas texto adicional antes ni después del JSON.";
 
             var response = "";
             await foreach (var stream in _ollamaClient.GenerateAsync(prompt))
@@ -33,7 +41,19 @@ namespace TalentGrid.Application.Services.AI
                 response += stream.Response;
             }
 
-            return response;
+            try
+            {
+                return JsonSerializer.Deserialize<CareerPathDto>(response, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+            catch (JsonException)
+            {
+
+                return new CareerPathDto { Summary = "Error al procesar el plan de carrera." };
+            }
+
         }
     }
 }

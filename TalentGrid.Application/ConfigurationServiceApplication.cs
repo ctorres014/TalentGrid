@@ -22,7 +22,7 @@ namespace TalentGrid.Application
             services.AddScoped<IQueryHandler<GetSkillsByEmployeeQuery, List<SearchTalentDto>>, GetSkillsByEmployeeHandler>();
             services.AddScoped<ICommandHandler<AddEmployeeSkillsCommand>, AddEmployeeSkillsHandler>();
             services.AddScoped<ICommandHandler<AddEndorsmentSkillsCommand>, AddEndorsmentSkillsHandler>();
-            services.AddScoped<IQueryHandler<GetMentorAdviceQuery, string>, GetMentorAdviceHandler>();
+            services.AddScoped<IQueryHandler<GetMentorAdviceQuery, CareerPathDto>, GetMentorAdviceHandler>();
 
             return services;
         }   
