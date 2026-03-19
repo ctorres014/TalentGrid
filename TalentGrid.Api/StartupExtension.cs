@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using System.Text;
 using TalentGrid.Application;
 using TelentGrid.Persistence;
@@ -16,7 +14,7 @@ namespace TalentGrid.Api
         {
             builder.Services.AddServiceApplication();
             builder.Services.AddServicePersistence(builder.Configuration.GetConnectionString("TalentGridDbContextConnection"));
-
+            
             //AddAuthentication(builder);
             builder.Services.AddAuthentication()
                 .AddKeycloakJwtBearer(

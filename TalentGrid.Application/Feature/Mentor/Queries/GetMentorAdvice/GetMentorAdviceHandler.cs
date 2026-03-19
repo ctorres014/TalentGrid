@@ -21,8 +21,14 @@ namespace TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice
             var skillsNames = employee.EmployeeSkills.Select(es => es.Skill.Name).ToList();
             if (employee == null)
                 throw new ArgumentException("Employee not found");
+            var careerAdvice = await _aiService.GetCareerAdviceAsync(employee.Role, skillsNames, request.TargetRole);
 
-            return await _aiService.GetCareerAdviceAsync(employee.Role, skillsNames, request.TargetRole);
+            if (!string.IsNullOrEmpty(careerAdvice.Summary))
+            {
+
+            }
+                
+            return careerAdvice;
         }
     
     }

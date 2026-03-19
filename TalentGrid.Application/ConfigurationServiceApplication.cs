@@ -6,6 +6,7 @@ using TalentGrid.Application.Feature.EmployeeSkill.Queries.GetSkillsByEmployee;
 using TalentGrid.Application.Feature.Endorsment.Command.AddEndorsmentSkills;
 using TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice;
 using TalentGrid.Application.Services.AI;
+using Dapr.Client;
 
 namespace TalentGrid.Application
 {
@@ -13,6 +14,7 @@ namespace TalentGrid.Application
     {
         public static IServiceCollection AddServiceApplication(this IServiceCollection services)
         {
+            services.AddDaprClient();
             services.AddScoped<IQueryDispatcher, QueryDispatcher>();
             services.AddScoped<ICommandDispatcher, CommandDispacher>();
             // Register AI Service

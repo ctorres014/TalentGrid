@@ -20,20 +20,49 @@ namespace TalentGrid.Application.Services.AI
 
             // Prompt de Ingeniería de Datos
             var prompt = $@"
-                Eres un sistema de Inteligencia Organizacional. 
-                Analiza al empleado: Rol Actual '{currentRole}', Habilidades: [{skillsList}]. 
-                Objetivo: '{targetRole}'.
+                    Eres un sistema de Inteligencia Organizacional.
 
-                Responde ÚNICAMENTE en formato JSON siguiendo esta estructura exacta:
-                {{
-                  ""summary"": ""Breve análisis de la situación"",
-                  ""missingSkills"": [
-                    {{ ""skillName"": ""Nombre"", ""importance"": ""Alta/Media"", ""why"": ""Razón"" }}
-                  ],
-                  ""recommendedProject"": {{ ""title"": ""Nombre del proyecto"", ""description"": ""Detalle"" }},
-                  ""motivationQuote"": ""Frase corta""
-                }}
-                No incluyas texto adicional antes ni después del JSON.";
+                    Analiza al empleado:
+                    - Rol Actual: '{currentRole}'
+                    - Habilidades: [{skillsList}]
+                    - Objetivo: '{targetRole}'
+
+                    Tu tarea es:
+                    1. Identificar habilidades faltantes (técnicas o blandas)
+                    2. Generar recomendaciones que AYUDEN DIRECTAMENTE a cubrir esas habilidades
+
+                    REGLAS IMPORTANTES:
+                    - Las recomendaciones DEBEN estar alineadas con las habilidades faltantes
+                    - Si faltan habilidades blandas (ej: liderazgo, comunicación), NO recomiendes proyectos técnicos
+                    - En ese caso, recomienda recursos de aprendizaje como:
+                        - libros
+                        - cursos
+                        - videos de YouTube
+                    - Si faltan habilidades técnicas, puedes recomendar proyectos prácticos
+
+                    Responde ÚNICAMENTE en JSON con esta estructura:
+
+                    {{
+                        ""summary"": ""Breve análisis"",
+                        ""missingSkills"": [
+                        {{ ""skillName"": ""Nombre"", ""importance"": ""Alta/Media"", ""why"": ""Razón"" }}
+                        ],
+                        ""recommendations"": [
+                        {{
+                            ""type"": ""book|course|youtube|project"",
+                            ""title"": ""Nombre del recurso"",
+                            ""description"": ""Por qué ayuda a cubrir la habilidad faltante""
+                        }}
+                        ],
+                        ""motivationQuote"": ""Frase corta""
+                    }}
+
+                    RESTRICCIONES:
+                    - No mezclar tipos incoherentes (ej: liderazgo → proyecto técnico)
+                    - Las recomendaciones deben explicar claramente qué habilidad cubren
+                    - JSON válido, completo y sin texto adicional
+                    ";
+
 
             var response = "";
             await foreach (var stream in _ollamaClient.GenerateAsync(prompt))
@@ -43,10 +72,11 @@ namespace TalentGrid.Application.Services.AI
 
             try
             {
-                return JsonSerializer.Deserialize<CareerPathDto>(response, new JsonSerializerOptions
+                var careerPath = JsonSerializer.Deserialize<CareerPathDto>(response, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
+                return careerPath ?? new CareerPathDto { Summary = "" };
             }
             catch (JsonException)
             {
