@@ -1,4 +1,5 @@
-﻿using TalentGrid.Application.Abstraction;
+﻿using Dapr.Client;
+using TalentGrid.Application.Abstraction;
 using TalentGrid.Application.Contracts.Dto;
 using TalentGrid.Application.Services.AI;
 using TalentGrid.Domain.Aggregate;
@@ -10,10 +11,14 @@ namespace TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice
     {
         private readonly IAiService _aiService;
         private readonly IEmployeeRepository _employeeRepository;
-        public GetMentorAdviceHandler(IAiService aiService, IEmployeeRepository employeeRepository)
+        private readonly DaprClient _daprClient;
+        private const string STORE_NAME = "statestore";
+        public GetMentorAdviceHandler(IAiService aiService, IEmployeeRepository employeeRepository,
+                                    DaprClient daprClient)
         {
             _aiService = aiService;
             _employeeRepository = employeeRepository;
+            _daprClient = daprClient;
         }
         public async Task<CareerPathDto> Handle(GetMentorAdviceQuery request)
         {
@@ -25,10 +30,19 @@ namespace TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice
 
             if (!string.IsNullOrEmpty(careerAdvice.Summary))
             {
-
+                string stateKey = $"advice-{request.EmployeeId}";
+                await _daprClient.SaveStateAsync(STORE_NAME, stateKey, careerAdvice, new StateOptions()
+                {
+                    Consistency = ConsistencyMode.Eventual
+                });
             }
-                
+            var lastDeviceAsync = GetLastDeviceAsync(request.EmployeeId);    
             return careerAdvice;
+        }
+
+        private async Task<CareerPathDto> GetLastDeviceAsync(int employeeId)
+        {
+            return await _daprClient.GetStateAsync<CareerPathDto>(STORE_NAME, $"advice-{employeeId}");
         }
     
     }

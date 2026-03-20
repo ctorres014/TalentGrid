@@ -35,11 +35,14 @@ namespace TalentGrid.Application.Services.AI
                     - Las recomendaciones DEBEN estar alineadas con las habilidades faltantes
                     - Si faltan habilidades blandas (ej: liderazgo, comunicación), NO recomiendes proyectos técnicos
                     - En ese caso, recomienda recursos de aprendizaje como:
-                        - libros
+                        - libros (recomandar de oreally)
                         - cursos
                         - videos de YouTube
-                    - Si faltan habilidades técnicas, puedes recomendar proyectos prácticos
-
+                    - Si faltan habilidades técnicas, puedes recomendar proyectos prácticos y tambien sugerir recursos de aprendizaje:
+                        - libros (recomandar de oreally)
+                        - cursos
+                        - videos de YouTube
+                    En cada una de las recomendaciones, si es posible, deja el link del recurso recomendado.
                     Responde ÚNICAMENTE en JSON con esta estructura:
 
                     {{
