@@ -20,7 +20,7 @@ Hemos construido TalentGrid utilizando las herramientas más potentes del ecosis
 | Capa | Tecnología | Propósito |
 | :--- | :--- | :--- |
 | **Orquestación** | **.NET Aspire** | Gestión de microservicios, telemetría y orquestación de contenedores. |
-| **Backend** | **ASP.NET Core 9** | API robusta con arquitectura limpia y alto rendimiento. |
+| **Backend** | **ASP.NET Core 10** | API robusta con arquitectura limpia y alto rendimiento. |
 | **Frontend** | **Next.js 15** | Interfaz "Antigravity" ultra rápida con TypeScript y Tailwind CSS. |
 | **Identidad (IdP)** | **Keycloak** | Gestión de usuarios y seguridad de grado empresarial. |
 | **Persistencia SQL** | **PostgreSQL** | Almacenamiento relacional para la matriz de talento y empleados. |
