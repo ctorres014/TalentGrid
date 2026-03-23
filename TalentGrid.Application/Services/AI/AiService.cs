@@ -54,7 +54,8 @@ namespace TalentGrid.Application.Services.AI
                         {{
                             ""type"": ""book|course|youtube|project"",
                             ""title"": ""Nombre del recurso"",
-                            ""description"": ""Por qué ayuda a cubrir la habilidad faltante""
+                            ""description"": ""Por qué ayuda a cubrir la habilidad faltante"",
+                            ""link"": ""URL del recurso (si aplica)""
                         }}
                         ],
                         ""motivationQuote"": ""Frase corta""
@@ -75,7 +76,8 @@ namespace TalentGrid.Application.Services.AI
 
             try
             {
-                var careerPath = JsonSerializer.Deserialize<CareerPathDto>(response, new JsonSerializerOptions
+                var responseClean = CleanJson(response);
+                var careerPath = JsonSerializer.Deserialize<CareerPathDto>(responseClean, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
@@ -87,6 +89,28 @@ namespace TalentGrid.Application.Services.AI
                 return new CareerPathDto { Summary = "Error al procesar el plan de carrera." };
             }
 
+        }
+
+        private string CleanJson(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return input;
+
+            input = input.Trim();
+
+            // remover ```json o ```
+            if (input.StartsWith("```"))
+            {
+                int start = input.IndexOf('\n');
+                if (start >= 0)
+                    input = input[(start + 1)..];
+
+                int end = input.LastIndexOf("```");
+                if (end >= 0)
+                    input = input[..end];
+            }
+
+            return input.Trim();
         }
     }
 }

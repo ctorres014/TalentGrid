@@ -12,7 +12,7 @@ namespace TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice
         private readonly IAiService _aiService;
         private readonly IEmployeeRepository _employeeRepository;
         private readonly DaprClient _daprClient;
-        private const string STORE_NAME = "statestore";
+        private const string STORE_NAME = "statestore-mongo";
         public GetMentorAdviceHandler(IAiService aiService, IEmployeeRepository employeeRepository,
                                     DaprClient daprClient)
         {
@@ -36,7 +36,7 @@ namespace TalentGrid.Application.Feature.Mentor.Queries.GetMentorAdvice
                     Consistency = ConsistencyMode.Eventual
                 });
             }
-            var lastDeviceAsync = GetLastDeviceAsync(request.EmployeeId);    
+            //var lastDeviceAsync = GetLastDeviceAsync(request.EmployeeId);  
             return careerAdvice;
         }
 

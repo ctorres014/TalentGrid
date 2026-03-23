@@ -1,0 +1,16 @@
+﻿apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: statestore-mongo
+spec:
+  type: state.mongodb
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "mongodb://admin:uJ4Rj0ntfVjmpmFK11P71Y@localhost:27017/statedb?authSource=admin&authMechanism=SCRAM-SHA-256"
+  - name: databaseName
+    value: "statedb"
+  - name: collectionName
+    value: "statestore"
+  - name: actorStateStore
+    value: "false"

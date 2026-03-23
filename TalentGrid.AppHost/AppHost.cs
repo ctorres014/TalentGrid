@@ -1,4 +1,5 @@
 using CommunityToolkit.Aspire.Hosting.Dapr;
+using System.Collections.Immutable;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
@@ -9,18 +10,18 @@ var keycloak = builder.AddKeycloak("keycloak", 8080, userName, password)
                       .WithDataVolume();
 
 // we start MongoDB
-var mongodb = builder.AddMongoDB("mongodb")
+var mongodb = builder.AddMongoDB("mongodb", port: 27017)
                      .WithLifetime(ContainerLifetime.Persistent)
                      .WithDataVolume();
 // we define db
-var stateDb = mongodb.AddDatabase("statedb");
+//var stateDb = mongodb.AddDatabase("statedb");
 
 // we define statestore of Dapr
-var stateStore = builder.AddDaprStateStore("statestore", new DaprComponentOptions
+var stateStore = builder.AddDaprStateStore("statestore-mongo", new DaprComponentOptions
 {
-    // Esto genera automáticamente el archivo YAML de Dapr con la conexión
     LocalPath = "components"
 });
+                 
 
 // we start ollama with the llama3 model
 var ollama = builder.AddOllama("ollama", port: 11434)
@@ -29,8 +30,11 @@ var ollama = builder.AddOllama("ollama", port: 11434)
 
 
 var apiService = builder.AddProject<Projects.TalentGrid_Api>("apiservice")
-                        .WithDaprSidecar()
-                        .WithReference(stateDb)
+                        .WithDaprSidecar(new DaprSidecarOptions
+                        {
+                            ResourcesPaths = ImmutableHashSet.Create("components") // solo lee de acá
+                        })
+                        .WithReference(mongodb)
                         .WithReference(keycloak)
                         .WithReference(ollama)
                         .WaitFor(keycloak)

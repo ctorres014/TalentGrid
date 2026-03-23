@@ -4,7 +4,7 @@
     {
         public string Summary { get; set; } = string.Empty;
         public List<SkillGap> MissingSkills { get; set; } = new();
-        public SuggestedProject RecommendedProject { get; set; } = new();
+        public List<SuggestedProject> Recommendations { get; set; } = new();
         public string MotivationQuote { get; set; } = string.Empty;
     }
 
@@ -17,8 +17,10 @@
 
     public class SuggestedProject
     {
+        public string Type { get; set; } = string.Empty; // book, course, youtube, project
         public string Title { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        public string Link { get; set; } = string.Empty;
     }
 
 }
